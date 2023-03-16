@@ -2,9 +2,9 @@ const express = require("express");
 const path = require('path')
 const app = express()
 const Hbs = require('hbs')
-require('./db/conn')
+require('./src/db/conn')
 
-const studentRegister = require('./models/register')
+const studentRegister = require('./src/models/register')
 
 
 const port = process.env.PORT || 3000
