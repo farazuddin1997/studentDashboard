@@ -1,8 +1,9 @@
 const express = require("express");
 const path = require('path')
 const app = express()
-const Hbs = require('hbs')
+// const Hbs = require('hbs')
 require('./src/db/conn')
+require('dotenv').config()
 
 const studentRegister = require('./src/models/register')
 
@@ -11,8 +12,8 @@ const port = process.env.PORT || 3000
 
 const static_path = path.join(__dirname, '../public')
 
-const templates_path = path.join(__dirname, '../templates/views')
-const partials_path = path.join(__dirname, '../templates/partials')
+// const templates_path = path.join(__dirname, '../templates/views')
+// const partials_path = path.join(__dirname, '../templates/partials')
 
 
 app.use(express.json())
@@ -21,11 +22,11 @@ app.use(express.urlencoded({extended:false}))
 
 console.log(__dirname);
 
-app.use(express.static(static_path))
+// app.use(express.static(static_path))
 
-app.set('view engine', "hbs")
-app.set("views", templates_path)
-Hbs.registerPartials(partials_path)
+// app.set('view engine', "hbs")
+// app.set("views", templates_path)
+// Hbs.registerPartials(partials_path)
 
 
 app.get('/', (req, res) => {

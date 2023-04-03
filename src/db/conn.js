@@ -1,6 +1,7 @@
 const mongoose =  require('mongoose')
+const mongoUri=process.env.MONGODB_URI || "mongodb://localhost:27017/youtubeRegistration"
 
-mongoose.connect("mongodb://localhost:27017/youtubeRegistration",{
+mongoose.connect(mongoUri,{
     useUnifiedTopology:true,
     useNewUrlParser:true,
     // strictQuery: false
